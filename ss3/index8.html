@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Code Snippet18 SS3</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-route.js"></script>
+</head>
+<body ng-app="myApp" bgcolor="lightyellow">
+<p><a href="#/!">UK Tourism</a></p>
+<a href="#!Dorset">Dorset</a>
+<a href="#!Leeds">Leeds</a>
+<a href="#!Cardiff">Cardiff</a>
+<p>Click links to read about Dorset, Leeds and Cardiff</p>
+<div ng-view style="background-color: lightblue"></div>
+
+<script>
+    var app = angular.module("myApp", ["hgRoute"]);
+    app.config(function ($routeProvider){
+        $routeProvider.when("/",{
+            templateUrl : "UKTourism.html"
+        })
+            .when("/Dorset", {
+                templateUrl : "dorset.html"
+            })
+            .when("/Leeds", {
+                templateUrl : "leeds.html"
+            })
+            .when("/Cardiff", {
+                templateUrl : "cardifff.html"
+            });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Code Snippet17 SS3</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+</head>
+<body>
+<h1>Custom Filter</h1>
+<ul ng-app="myApp" ng-controller="nameCtrl">
+    <li ng-repeat="x in names">
+        {{x | myFilter}}
+    </li>
+</ul>
+
+<script>
+    var app = angular.module('myApp', []);
+    app.filter('myFilter', function () {
+        return function (x) {
+            var i, c, txt = "";
+            for (i = 0; i < x.length; i++){
+                c = x[i];
+                if (i % 2 == 0) {
+                    c = c.toUpperCase();
+                }
+                txt += c;
+            }
+            return txt;
+        }
+    });
+    app.controller('nameCtrl', function ($scope) {
+        $scope.names = [
+            'Jahi',
+            'Carl',
+            'Margareth',
+            'Hege',
+            'Joe',
+            'Gustav',
+            'Birgit',
+            'Mary',
+            'Kai'
+        ];
+    });
+</script>
+
+<p>This filter, called "myFilter", will capitalize every other character.</p>
+
+<!--    Bài này học cách tạo một filter theo ý mình, ở đây filter được tạo sẽ viết hoa những chữ cái-->
+<!--    có vị trí chẵn bắt đầu từ 0 trong một từ.-->
+
+</body>
+</html>

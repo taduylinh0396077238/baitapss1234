@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en" ng-app-"myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+</head>
+<body ng-controller="myController">
+<!-- thêm controller vào bất kì phần tử nào , nó sẽ tạo 1 phạm vi mới  -->
+<script>
+    var app = angular.module('myApp', []);
+    app.controller("myController", function ($scope) {
+        $scope.name = "";
+    });
+</script>
+
+
+</body>
+</html>

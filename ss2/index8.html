@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Data Binding</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+</head>
+<body ng-controller="myController">
+
+<!--    Data Binding trong AngularJS là tập hợp các dữ liệu giữa model và  view-->
+<!--        Ở ví dụ dưới, dữ liệu được tạo sẵn và lưu ở model, khi ta gọi ra extension "course", thì dữ liệu-->
+<!--        sẽ hiển thị ở phần view cho người dùng thấy -->
+<div>
+    <p>Hello!</p>
+    <p>Welcome to {{course }}</p>
+</div>
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('myController',function($scope){
+        $scope.course = "AngularJS";
+    })
+</script>
+</body>
+</html>
