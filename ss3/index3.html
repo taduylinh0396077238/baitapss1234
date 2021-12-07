@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Code Snippet13 SS3</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+</head>
+<body ng-app="myApp">
+<h1>AngularJs Currency Filter</h1>
+<div ng-controller="myController">
+    Default Currency: {{person.salary | currency}} <br>
+    Custom Currency Identifier: {{person.salary | currency:'Euro.'}} <br>
+    Without Fraction: {{person.salary | currency:'Euro':0}} <br>
+    Two Decimal Fraction: <span ng-bind="persion.salary | currency:'GBP':2"></span>
+</div>
+
+<!--    Bài này ta học đến Filer tiếp theo trong AngularJS là currency.-->
+<!--    Filter Currency dùng để chuyển data dạng number sang dạng tiền tệ, currency:'Euro' nghĩa là đơn vị tiền tệ-->
+<!--    sau khi chuyển đổi sang là đồng Euro, ta cũng có thể thay nó bằng symbol '£'.-->
+
+<script>
+    var myApp = angular.module('myApp', []);
+    myApp.controller("myController", function ($scope) {
+        $scope.person = {salary: 100000}
+    });
+</script>
+</body>
+</html>
